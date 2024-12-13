@@ -29,6 +29,7 @@ plt.plot(sp500_data.index, sp500_zscore, label="S&P500 (z-score)", color="blue",
 plt.title("Confronto tra indice VIX e S&P500 (z-score)", fontsize=16)
 plt.xlabel("Data", fontsize=12)
 plt.ylabel("Z-Score", fontsize=12)
+plt.axhline(y=0, color="orange", linestyle="-.", label="Media")
 plt.legend()
 plt.grid(alpha=0.3)
 plt.tight_layout()
