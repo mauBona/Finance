@@ -18,14 +18,7 @@ vix_data = yf.download(vix_symbol, start=start_date, end=end_date)
 sp500_data = yf.download(sp500_symbol, start=start_date, end=end_date)
 
 # Calcolo dello z-score per entrambi gli indici:  (valore - media)/dev_standard
-# StandardScaler e MiMaxScaler danno risultati peggiori
-
-#scaler = StandardScaler()
-#vix_data['Close'] = scaler.fit_transform(vix_data['Close'])
-#sp500_data['Close'] = scaler.fit_transform(sp500_data['Close'])
-
-#vix_zscore = vix_data
-#sp500_zscore = sp500_data
+# StandardScaler fa lo stesso ma non lavora sui Panda Dataframes
 
 vix_zscore = (vix_data['Close'] - vix_data['Close'].mean()) / vix_data['Close'].std()
 sp500_zscore = (sp500_data['Close'] - sp500_data['Close'].mean()) / sp500_data['Close'].std()
